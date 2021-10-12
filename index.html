@@ -9,6 +9,8 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+
   <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -34,6 +36,17 @@
       <h3 class="btn btn-danger" id="speed">Volume</h3>
     </div>
 	<br><br>
+  <span>
+  <div>
+  <button onclick="play();" class="btn btn-success play_button">Play</button>
+  <button onclick="stop();" class="btn btn-success play_button">Stop</button>
+  </div>
+
+  <div>
+    <button onclick="play2();" class="btn btn-success play_button">Play2</button>
+    <button onclick="stop2();" class="btn btn-success play_button">Stop2</button>
+    </div>
+  </span>
 </center>
 
 <script src="main.js"></script>
