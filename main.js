@@ -1,4 +1,7 @@
 song = "";
+
+song2_status = "";
+
 leftWristX = 0;
 leftWristY = 0;
 
@@ -34,23 +37,27 @@ function modelLoaded(){
     console.log('PoseNet Is Initialized');
 }
 
+function draw(){
+
+    image(video, 0, 0, 600, 500);
+
+    song2_status = song2.isplaying();
+
+    fill("#FF0000");
+    stroke("#FF3583");
+
+    if(scoreLeftWrist > 0.2)
+	{
+		circle(leftWristX,leftWristY,20);
+        song1.stop();
+        if(song2_status == false){
+        song2.play();
+        document.getElementById("volume").innerHTML = "Now Playing = Chug Jug With You (Number One Victory Royal) | Song By Leviathan";	
+        }
+    	}
+}
+
 function preload(){
     song = loadSound("music.mp3");
     song2 = loadSound("music2.mp3");
-}
-
-function play(){
-    song.play();
-}
-
-function stop(){
-    song.stop();
-}
-
-function play2(){
-    song2.play();
-}
-
-function stop2(){
-    song2.stop();
 }
