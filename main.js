@@ -1,6 +1,8 @@
 song = "";
+song2 = "";
 
 song2_status = "";
+song_status = "";
 
 leftWristX = 0;
 leftWristY = 0;
@@ -49,13 +51,24 @@ function draw(){
     if(scoreLeftWrist > 0.2)
 	{
 		circle(leftWristX,leftWristY,20);
-        song1.stop();
+        song2.stop();
         if(song2_status == false){
-        song2.play();
+        song.play();
         document.getElementById("volume").innerHTML = "Now Playing = Chug Jug With You (Number One Victory Royal) | Song By Leviathan";	
+        }
+    }
+    if(scoreRightWrist > 0.2)
+	{
+		circle(rightWristX,rightWristY,20);
+        song.stop();
+        if(song_status == false){
+        song2.play();
+        document.getElementById("volume").innerHTML = "Now Playing = Chug Jug With You MINECRAFT (Number One MINECRAFT Victory Royal) | Song By ?";	
         }
     	}
 }
+
+
 
 function preload(){
     song = loadSound("music.mp3");
