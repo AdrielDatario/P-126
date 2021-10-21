@@ -14,7 +14,7 @@ function setup() {
     canvas = createCanvas(600, 500);
     canvas.center();
 
-    video = createCature(VIDEO);
+    video = createCapture(VIDEO);
     video.hide();
 
     poseNet = ml5.poseNet(video, modelLoaded);
@@ -22,7 +22,7 @@ function setup() {
 }
 
 function gotPoses(results){
-    if(results.lenth > 0){
+    if(results.length > 0){
         console.log(results);
         leftWristX = results[0].pose.leftWrist.x;
         leftWristY = results[0].pose.leftWrist.y;
@@ -67,8 +67,6 @@ function draw(){
         }
     	}
 }
-
-
 
 function preload(){
     song = loadSound("music.mp3");
